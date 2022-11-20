@@ -1,0 +1,71 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-user-role-enum
+      author: Anton
+      dbms: postgresql
+      sql: CREATE TYPE ROLE_TYPE as ENUM('USER','ADMIN')
+  - changeSet:
+      id: add-account-type-enum
+      author: Anton
+      dbms: postgresql
+      sql: CREATE TYPE ACCOUNT_TYPE as ENUM('FREE_ACCOUNT','PAID_ACCOUNT')
+  - changeSet:
+      id: create-users-table
+      author: Anton
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: first_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: account_type
+                  type: ACCOUNT_TYPE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role
+                  type: ROLE_TYPE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: book_limit_reached
+                  type: boolean
+                  defaultValue: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: book_limit
+                  type: integer
+                  defaultValue: 3
+                  constraints:
+                    nullable: false
+              - column:
+                  name: books_rented
+                  type: integer
+                  constraints:
+                    nullable: false

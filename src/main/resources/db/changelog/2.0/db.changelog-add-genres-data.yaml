@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-genres-table
+      author: Anton
+      changes:
+        - insert:
+            tableName: genres
+            columns:
+              - column:
+                  name: id
+                  value: "1"
+              - column:
+                  name: name
+                  value: "Novel"
+        - insert:
+            tableName: genres
+            columns:
+              - column:
+                  name: id
+                  value: "2"
+              - column:
+                  name: name
+                  value: "Dark fantasy"
+        - insert:
+            tableName: genres
+            columns:
+              - column:
+                  name: id
+                  value: "3"
+              - column:
+                  name: name
+                  value: "Popular science"

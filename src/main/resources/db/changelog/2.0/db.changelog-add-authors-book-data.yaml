@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-authors-book-data
+      author: Anton
+      changes:
+        - insert:
+            tableName: authors_book
+            columns:
+              - column:
+                  name: id
+                  value: "1"
+              - column:
+                  name: author_id
+                  value: "1"
+              - column:
+                  name: books_id
+                  value: "1"
+        - insert:
+            tableName: authors_book
+            columns:
+              - column:
+                  name: id
+                  value: "2"
+              - column:
+                  name: author_id
+                  value: "1"
+              - column:
+                  name: books_id
+                  value: "2"
+        - insert:
+            tableName: authors_book
+            columns:
+              - column:
+                  name: id
+                  value: "3"
+              - column:
+                  name: author_id
+                  value: "3"
+              - column:
+                  name: books_id
+                  value: "3"
+        - insert:
+            tableName: authors_book
+            columns:
+              - column:
+                  name: id
+                  value: "4"
+              - column:
+                  name: author_id
+                  value: "1"
+              - column:
+                  name: books_id
+                  value: "4"
+        - insert:
+            tableName: authors_book
+            columns:
+              - column:
+                  name: id
+                  value: "5"
+              - column:
+                  name: author_id
+                  value: "2"
+              - column:
+                  name: books_id
+                  value: "4"

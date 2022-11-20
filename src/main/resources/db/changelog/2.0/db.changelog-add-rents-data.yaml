@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-rents-data
+      author: Anton
+      changes:
+        - insert:
+            tableName: rents
+            columns:
+              - column:
+                  name: id
+                  value: "1"
+              - column:
+                  name: book_id
+                  value: "4"
+              - column:
+                  name: user_id
+                  value: "1"
+              - column:
+                  name: price
+                  value: "10"
+              - column:
+                  name: date_rented
+                  value: "2021-10-29T00:00:00"
+              - column:
+                  name: date_due
+                  value: "2022-10-29T00:00:00"
+              - column:
+                  name: date_returned
+                  value: "2022-10-29T00:00:00"
+              - column:
+                  name: overdue
+                  value: false
+              - column:
+                  name: returned
+                  value: false

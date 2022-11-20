@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-authors-table
+      author: Anton
+      changes:
+        - createTable:
+            tableName: authors
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: gender
+                  type: varchar(50)
+              - column:
+                  name: date_of_birth
+                  type: timestamp

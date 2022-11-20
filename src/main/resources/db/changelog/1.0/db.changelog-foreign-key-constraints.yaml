@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: fk-authors-book-to-authors
+      author: Anton
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: author_id
+            baseTableName: authors_book
+            constraintName: fk_authors_book_author
+            referencedColumnNames: id
+            referencedTableName: authors
+            onDelete: CASCADE
+  - changeSet:
+      id: fk-authors-book-to-books
+      author: Anton
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: books_id
+            baseTableName: authors_book
+            constraintName: fk_authors_book_books
+            referencedColumnNames: id
+            referencedTableName: books
+            onDelete: CASCADE
+  - changeSet:
+      id: fk-books-to-genre
+      author: Anton
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: genre_id
+            baseTableName: books
+            constraintName: fk_book_genres
+            referencedColumnNames: id
+            referencedTableName: genres
+  - changeSet:
+      id: fk-rents-to-books
+      author: Anton
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: book_id
+            baseTableName: rents
+            constraintName: fk_rents_books
+            referencedColumnNames: id
+            referencedTableName: books
+  - changeSet:
+      id: fk-rents-to-user
+      author: Anton
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: rents
+            constraintName: fk_rents_user
+            referencedColumnNames: id
+            referencedTableName: users

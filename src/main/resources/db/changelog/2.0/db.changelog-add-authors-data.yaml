@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-authors-data
+      author: Anton
+      changes:
+        - insert:
+            tableName: authors
+            columns:
+              - column:
+                  name: id
+                  value: "1"
+              - column:
+                  name: name
+                  value: "King"
+              - column:
+                  name: gender
+                  value: "Male"
+              - column:
+                  name: date_of_birth
+                  value: "1947-09-21T00:00:00"
+        - insert:
+            tableName: authors
+            columns:
+              - column:
+                  name: id
+                  value: "2"
+              - column:
+                  name: name
+                  value: "Queen"
+              - column:
+                  name: gender
+                  value: "Female"
+              - column:
+                  name: date_of_birth
+                  value: "1977-10-01T00:00:00"
+        - insert:
+            tableName: authors
+            columns:
+              - column:
+                  name: id
+                  value: "3"
+              - column:
+                  name: name
+                  value: "Den Brown"
+              - column:
+                  name: gender
+                  value: "Male"
+              - column:
+                  name: date_of_birth
+                  value: "1964-06-22T00:00:00"

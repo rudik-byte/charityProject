@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/2.0/db.changelog-add-authors-data.yaml
+      reletiveToChangelogFile: true
+  - include:
+      file: db/changelog/2.0/db.changelog-add-genres-data.yaml
+      reletiveToChangelogFile: true
+  - include:
+      file: db/changelog/2.0/db.changelog-add-books-data.yaml
+      reletiveToChangelogFile: true
+  - include:
+      file: db/changelog/2.0/db.changelog-add-users-data.yaml
+      reletiveToChangelogFile: true
+  - include:
+      file: db/changelog/2.0/db.changelog-add-authors-book-data.yaml
+      reletiveToChangelogFile: true
+  - include:
+      file: db/changelog/2.0/db.changelog-add-rents-data.yaml
+      reletiveToChangelogFile: true

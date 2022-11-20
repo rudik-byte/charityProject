@@ -1,0 +1,113 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-books-data
+      author: Anton
+      changes:
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  value: "1"
+              - column:
+                  name: name
+                  value: "11/22/63"
+              - column:
+                  name: publisher
+                  value: "KBD"
+              - column:
+                  name: publish_date
+                  value: "2020-07-20T0:00:00"
+              - column:
+                  name: rating
+                  value: "5"
+              - column:
+                  name: isbn
+                  value: "9781451627305"
+              - column:
+                  name: genre_id
+                  value: "1"
+              - column:
+                  name: rented
+                  value: false
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  value: "2"
+              - column:
+                  name: name
+                  value: "The Green Mile"
+              - column:
+                  name: publisher
+                  value: "KBD"
+              - column:
+                  name: publish_date
+                  value: "1996-12-12T0:00:00"
+              - column:
+                  name: rating
+                  value: "5"
+              - column:
+                  name: isbn
+                  value: "9781451627305"
+              - column:
+                  name: genre_id
+                  value: "2"
+              - column:
+                  name: rented
+                  value: false
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  value: "3"
+              - column:
+                  name: name
+                  value: "Da Vinci Code"
+              - column:
+                  name: publisher
+                  value: "Transworld Digital"
+              - column:
+                  name: publish_date
+                  value: "2009-12-12T0:00:00"
+              - column:
+                  name: rating
+                  value: "5"
+              - column:
+                  name: isbn
+                  value: "9781451627305"
+              - column:
+                  name: genre_id
+                  value: "1"
+              - column:
+                  name: rented
+                  value: false
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  value: "4"
+              - column:
+                  name: name
+                  value: "Think and speak"
+              - column:
+                  name: publisher
+                  value: "Transworld Digital"
+              - column:
+                  name: publish_date
+                  value: "2015-12-12T0:00:00"
+              - column:
+                  name: rating
+                  value: "4"
+              - column:
+                  name: isbn
+                  value: "9781451432305"
+              - column:
+                  name: genre_id
+                  value: "3"
+              - column:
+                  name: rented
+                  value: false

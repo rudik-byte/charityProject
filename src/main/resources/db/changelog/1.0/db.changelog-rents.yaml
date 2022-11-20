@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-rents-table
+      author: Anton
+      changes:
+        - createTable:
+            tableName: rents
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: book_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: DECIMAL
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_rented
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_due
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_returned
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: overdue
+                  type: boolean
+                  defaultValue: true
+                  constraints:
+                    nullable: false
+              - column:
+                  name: returned
+                  type: boolean
+                  defaultValue: false
+                  constraints:
+                    nullable: false

@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/1.0/db.changelog-books.yaml
+      reletiveToChangelogFile: true
+  - include:
+      file: db/changelog/1.0/db.changelog-authors.yaml
+      reletiveToChangelogFile: true
+  - include:
+      file: db/changelog/1.0/db.changelog-authors-book.yaml
+      reletiveToChangelogFile: true
+  - include:
+      file: db/changelog/1.0/db.changelog-genres.yaml
+      reletiveToChangelogFile: true
+  - include:
+      file: db/changelog/1.0/db.changelog-rents.yaml
+      reletiveToChangelogFile: true
+  - include:
+      file: db/changelog/1.0/db.changelog-users.yaml
+      reletiveToChangelogFile: true
+  - include:
+      file: db/changelog/1.0/db.changelog-foreign-key-constraints.yaml
+      reletiveToChangelogFile: true
