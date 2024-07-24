@@ -34,9 +34,10 @@ public class UserService {
                 .orElseThrow(() -> new NotFoundException(String.format("User with this name %s not found", lastName)));
     }
 
-    public User update(User existed, User newUser) {
-        userRepository.findById(existed.getId())
-                .orElseThrow(() -> new NotFoundException(String.format("User with this Id %s not found", existed.getId())));
+    public User update(long existedUserId, User newUser) {
+        User existed = userRepository.findById(existedUserId)
+                .orElseThrow(() -> new NotFoundException(String.format("User with this Id %s not found", existedUserId)));
+
         userMapper.update(existed, userMapper.toDto(newUser));
         return userRepository.save(newUser);
     }

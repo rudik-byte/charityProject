@@ -10,6 +10,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class BookService {
@@ -55,6 +57,14 @@ public class BookService {
     @Transactional
     public Page<Book> getAll(Pageable pageable) {
         return bookRepository.findAll(pageable);
+    }
+
+    public List<Book> findAll() {
+        return bookRepository.findAll();
+    }
+
+    public void saveAll(List<Book> books) {
+        bookRepository.saveAll(books);
     }
 
 }

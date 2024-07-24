@@ -2,7 +2,6 @@ package com.example.charityBook.controller;
 
 import com.example.charityBook.dto.UserDto;
 import com.example.charityBook.dto.mapper.UserMapper;
-import com.example.charityBook.exception.NotFoundException;
 import com.example.charityBook.model.User;
 import com.example.charityBook.service.UserService;
 import jakarta.validation.constraints.NotNull;
@@ -46,7 +45,7 @@ public class UserController {
     @PutMapping("/{id}")
     public User updateUser(@PathVariable @NotNull long id,
                            @RequestBody @Validated UserDto newUser) {
-        return userService.update(getById(id), userMapper.fromDto(newUser));
+        return userService.update(id, userMapper.fromDto(newUser));
     }
 
     @DeleteMapping("/{id}")
