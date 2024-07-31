@@ -8,6 +8,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class GenreService {
@@ -46,5 +48,9 @@ public class GenreService {
 
     public Page<Genre> getAll(Pageable pageable) {
         return genreRepository.findAll(pageable);
+    }
+
+    public List<Genre> findAll() {
+        return genreRepository.findAll();
     }
 }

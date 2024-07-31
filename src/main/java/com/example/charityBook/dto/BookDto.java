@@ -17,7 +17,7 @@ public class BookDto {
     @NotNull(message = "Book ID should be not null")
     private Long id;
 
-    @NotBlank(message = "Book ID should be not null")
+//    @NotBlank(message = "Authors should be not null")
     private Set<AuthorDto> authors;
 
     @NotBlank(message = "Book title should be not null")
@@ -30,5 +30,5 @@ public class BookDto {
     private Genre genre;
 
     @NotNull(message = "Book price should be not null")
-    private long price;
+    private double price;
 }

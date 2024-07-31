@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" lang="en">
 <head>
-    <title>Binding a List in Thymeleaf</title>
+    <title>BB-HU</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/mainStyle.css">
 </head>
 <body>
-<div class="container">
-    <p>
-    <h3>Buy Book - Help Ukraine</h3>
-    </p>
+<div class="container text-center">
+    <h3>Buy Book - Help</h3>
 </div>
-<div class="container">
-    <a class="btn btn-info" href="#" th:href="@{/books/all}"> Books List </a>
+<div class="container center-container">
+    <a class="btn btn-info" href="#" th:href="@{/books/all}">Books List</a>
+    <a class="btn btn-info" href="#">Info</a>
+    <a class="btn btn-info" href="#">About</a>
+    <a class="btn btn-info" href="#">Contacts</a>
+</div>
+<div class="container image-container">
+    <img src="/images/photo_2022-09-19_15-55-24.jpg" alt="Description of image">
 </div>
 </body>
 </html>

@@ -11,6 +11,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class AuthorService {
@@ -33,7 +35,7 @@ public class AuthorService {
     }
 
     @Transactional
-    public Author getByName(String name) {
+    public Author findByName(String name) {
         return authorRepository.findByName(name)
                 .orElseThrow(() -> new NotFoundException(String.format("Author with this name %s not found", name)));
     }
@@ -56,5 +58,10 @@ public class AuthorService {
     @Transactional
     public Page<Author> findAll(Pageable pageable) {
         return authorRepository.findAll(pageable);
+    }
+
+    @Transactional
+    public List<Author> findAll() {
+        return authorRepository.findAll();
     }
 }

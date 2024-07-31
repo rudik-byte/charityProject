@@ -27,12 +27,12 @@ public class Book {
 
     private String rating;
 
-    private String language;
+    private Language language;
 
     @OneToOne
     private Genre genre;
 
-    private long price;
+    private double price;
 
     @Override
     public boolean equals(Object o) {

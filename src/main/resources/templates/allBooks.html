@@ -1,40 +1,51 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" lang="en">
 <head>
-    <title>All Books</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <title>Books</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/allBookStyle.css">
 </head>
 <body>
+<div class="container text-center">
+    <h3>Books</h3>
+</div>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1> Books </h1>
-        </div>
-    </div>
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-md-6">
-            <table class="table">
+            <table class="table text-center mx-auto">
                 <thead>
                 <tr>
-                    <th> Title </th>
-                    <th> Price </th>
+                    <th>Title</th>
+                    <th>Price</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:if="${books.empty}">
-                    <td colspan="2"> No Books Available </td>
+                <tr th:if="${books.isEmpty()}">
+                    <td colspan="2">No Books Available</td>
                 </tr>
                 <tr th:each="book : ${books}">
-                    <td><span th:text="${book.name}"> Title </span></td>
-                    <td><span th:text="${book.price}"> Price </span></td>
+                    <td><span th:text="${book.name}"></span></td>
+                    <td><span th:text="${book.price}"></span></td>
                 </tr>
                 </tbody>
             </table>
         </div>
-        <div class="col-md-6">
-            <a class="btn btn-success" href="#" th:href="@{/books/create}"> Add Books </a>
-            <a class="btn btn-primary" href="#" th:href="@{/books/edit}" th:classappend="${books.empty} ? 'disabled' : ''"> Edit Books </a>
+        <div class="col-md-6 text-right" sec:authorize="hasRole('ROLE_ADMIN')">
+            <a class="btn btn-lightgrey" href="#" th:href="@{/books/create}">Add Books</a>
+            <a class="btn btn-lightblack" href="#" th:href="@{/books/edit}" th:classappend="${books.isEmpty()} ? 'disabled' : ''">Edit Books</a>
         </div>
     </div>
+</div>
+<div class="container center-container">
+    <a class="btn btn-info" href="#">Info</a>
+    <a class="btn btn-info" href="#">About</a>
+    <a class="btn btn-info" href="#">Contacts</a>
 </div>
 </body>
 </html>

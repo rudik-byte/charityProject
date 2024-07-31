@@ -1,0 +1,77 @@
+/* allBookStyle.css */
+body {
+    background-color: #f4e9cd; /* Light sand color */
+    color: #000000;
+    font-family: 'Merriweather', Arial, sans-serif;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+h3 {
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Libre Baskerville', Arial, sans-serif;
+    font-weight: 700;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.btn-info {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+    font-family: 'Merriweather', Arial, sans-serif;
+}
+
+.btn-info:hover {
+    background-color: #333333;
+    border-color: #333333;
+}
+
+.btn-lightgrey {
+    background-color: #d3d3d3; /* Light grey color */
+    border-color: #d3d3d3;
+    color: #000000;
+    font-family: 'Merriweather', Arial, sans-serif;
+}
+
+.btn-lightgrey:hover {
+    background-color: #bfbfbf;
+    border-color: #bfbfbf;
+}
+
+.btn-lightblack {
+    background-color: #808080; /* Light black color */
+    border-color: #808080;
+    color: #ffffff;
+    font-family: 'Merriweather', Arial, sans-serif;
+}
+
+.btn-lightblack:hover {
+    background-color: #696969;
+    border-color: #696969;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}

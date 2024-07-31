@@ -1,44 +1,59 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <title>Add Books</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <title>Add Book</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Merriweather&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/allBookStyle.css">
 </head>
 <body>
+<div class="container text-center">
+    <h3>Add a New Book</h3>
+</div>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1> Add Books </h1>
-        </div>
-    </div>
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-md-6">
-            <a class="btn btn-info" href="#" th:href="@{/books/all}"> Back to All Books </a>
-            <form action="#" class="form-horizontal"
+            <form action="#" class="form-horizontal text-center mx-auto"
                   th:action="@{/books/save}"
-                  th:object="${form}"
+                  th:object="${book}"
                   method="post">
                 <fieldset>
-					<span class="pull-right">
-						    <input type="submit" id="submitButton" class="btn btn-success" th:value="Save">
-						    <input type="reset" id="resetButton" class="btn btn-danger" th:value="Reset"/>
-					</span>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th> Title</th>
-                            <th> Author</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr th:each="book, itemStat : *{books}">
-                            <td><input th:placeholder="Title + ' ' + ${itemStat.count}" th:field="*{books[__${itemStat.index}__].name}" required/></td>
-                            <td><input th:placeholder="Price + ' ' + ${itemStat.count}" th:field="*{books[__${itemStat.index}__].price}" required/></td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <div class="form-group">
+                        <label for="bookTitle">Title</label>
+                        <input type="text" id="bookTitle" class="form-control" th:field="*{name}" placeholder="Title" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookLanguage">Language</label>
+                        <input type="text" id="bookLanguage" class="form-control" th:field="*{language}" placeholder="Language" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookGenre">Genre</label>
+                        <select id="bookGenre" class="form-control" th:field="*{genre}" required>
+                            <option th:each="genre : ${allGenres}" th:value="${genre.id}" th:text="${genre.name}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookPrice">Price</label>
+                        <input type="number" id="bookPrice" class="form-control" th:field="*{price}" placeholder="Price" required/>
+                    </div>
+                    <div class="form-group">
+                        <span class="pull-right">
+                            <input type="submit" id="submitButton" class="btn btn-lightgrey" value="Save">
+                            <input type="reset" id="resetButton" class="btn btn-lightblack" value="Reset"/>
+                        </span>
+                    </div>
                 </fieldset>
             </form>
         </div>
+    </div>
+    <div class="container center-container">
+        <a class="btn btn-info" href="#" th:href="@{/books/all}">Back to All Books</a>
     </div>
 </div>
 </body>
